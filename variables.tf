@@ -1,7 +1,7 @@
 variable "name" {
     type        = string
     default     = null
-    description = " Friendly name of the new secret. The secret name can consist of uppercase letters, lowercase letters, digits, and any of the following characters: /_+=.@- Conflicts with name_prefix."
+    description = "Friendly name of the new secret. The secret name can consist of uppercase letters, lowercase letters, digits, and any of the following characters: /_+=.@- Conflicts with name_prefix."
 }
 
 variable "name_prefix" {

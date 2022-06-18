@@ -1,5 +1,44 @@
 # Terraform AWS Secret manager module
 
+Terraform module for aws secret manager.
+
+## Usage
+
+The easiest way to create a secrets-manager's secret with terraform.
+
+```hcl
+
+module "secrets_manager" {
+  source = "../"
+  
+  name            = "my-secret"
+  secret_string   = jsonencode({
+      DB_HOST     = "db.example.com",
+      DB_USER     = "user",
+      DB_PASSWORD = "password"
+  })
+}
+
+```
+
+Secret replicated on `us-east-2`
+
+```hcl
+
+module "secrets_manager_replica" {
+  source = "../"
+  
+  name            = "my-secret-replicated"
+  region          = "us-east-2"
+  secret_string   = jsonencode({
+      DB_HOST     = "db.example.com",
+      DB_USER     = "user",
+      DB_PASSWORD = "password"
+  })
+}
+```
+
+
 ## Requirements
 
 | Name | Version |
